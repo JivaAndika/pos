@@ -2,7 +2,7 @@
 define("DB_HOST","localhost");
 define("DB_USER","root");
 define("DB_PASSWORD","");
-define("DB_NAME","crud oop");
+define("DB_NAME","pos_db");
 
 class Connection{
     public $db;

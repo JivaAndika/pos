@@ -62,7 +62,7 @@
         <div class="navbar-bg"></div>
         <!-- Navbar -->
 
-        <?= include "./../components/layout/navbar-index.php" ?>
+        <?= include "./../components/layout/navbar.php" ?>
 
         <!-- Sidebar  -->
         

@@ -9,7 +9,7 @@ abstract class Model extends Connection implements ModelInterface{
         $key = implode(",",$key);
         $value = implode("','",$value);
         $query = "INSERT INTO $table ($key) VALUES ('$value')";
-        var_dump($query);
+      
         $result = mysqli_query($this->db,$query);
         return $result;
     }
@@ -49,13 +49,24 @@ abstract class Model extends Connection implements ModelInterface{
         }{
             return false;
         }
-        // return $result;
         }
     public function delete_data($id,$table){
         $query = "DELETE * FROM $table WHERE id = $id";
         $result = mysqli_query($this->db,$query);
         
         return $result;
+    }
+    public function search_data($keyword,$table){
+        $query = "SELECT * FROM $table $keyword";
+        $result = mysqli_query($this->db, $query);
+        return $this->convert_data($result);
+    }
+    public function paggination_data($startData , $limit, $table ){
+        $query = "SELECT * FROM $table LIMIT $startData, $limit";
+        $result = mysqli_query($this->db, $query);
+        return $this->convert_data($result);
+    
+          
     }
 
 }
